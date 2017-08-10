@@ -1,0 +1,86 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:271876208955194436",
+      "lastPropertyId": "3:1893130249495729472",
+      "name": "CoordinatesDb",
+      "properties": [
+        {
+          "id": "1:1937211434339614357",
+          "name": "id"
+        },
+        {
+          "id": "2:5208619898520384269",
+          "name": "longtitude"
+        },
+        {
+          "id": "3:1893130249495729472",
+          "name": "latitude"
+        }
+      ]
+    },
+    {
+      "id": "2:918920610361233571",
+      "lastPropertyId": "6:2877306657793352847",
+      "name": "EarthquakeDb",
+      "properties": [
+        {
+          "id": "1:3034737791162039259",
+          "name": "id"
+        },
+        {
+          "id": "2:6162608250199753390",
+          "name": "title"
+        },
+        {
+          "id": "3:6763102049366565531",
+          "name": "magnitude"
+        },
+        {
+          "id": "4:7231023264041835852",
+          "name": "time"
+        },
+        {
+          "id": "5:7941623713892061363",
+          "name": "detailsUrl"
+        },
+        {
+          "id": "6:2877306657793352847",
+          "indexId": "1:2316960434809665735",
+          "name": "locationId"
+        }
+      ]
+    },
+    {
+      "id": "3:6420799052385946556",
+      "lastPropertyId": "3:3810178754723094442",
+      "name": "LocationDb",
+      "properties": [
+        {
+          "id": "1:6125687092545580459",
+          "name": "id"
+        },
+        {
+          "id": "2:4450289910207372740",
+          "name": "name"
+        },
+        {
+          "id": "3:3810178754723094442",
+          "indexId": "2:3848983530218571282",
+          "name": "coordsId"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "3:6420799052385946556",
+  "lastIndexId": "2:3848983530218571282",
+  "lastSequenceId": "0:0",
+  "modelVersion": 2,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "version": 1
+}

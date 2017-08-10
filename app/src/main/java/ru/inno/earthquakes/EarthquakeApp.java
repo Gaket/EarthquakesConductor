@@ -1,5 +1,6 @@
 package ru.inno.earthquakes;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
@@ -13,8 +14,9 @@ import timber.log.Timber;
  * @author Artur Badretdinov (Gaket)
  *         21.07.17.
  */
-public class EartquakeApp extends Application {
+public class EarthquakeApp extends Application {
 
+    @SuppressLint("StaticFieldLeak") // here will be only an App Context
     private static ComponentsManager componentsManager;
     private RefWatcher refWatcher;
 
@@ -32,7 +34,7 @@ public class EartquakeApp extends Application {
     }
 
     public static RefWatcher getRefWatcher(Context context) {
-        EartquakeApp application = (EartquakeApp) context.getApplicationContext();
+        EarthquakeApp application = (EarthquakeApp) context.getApplicationContext();
         return application.refWatcher;
     }
 

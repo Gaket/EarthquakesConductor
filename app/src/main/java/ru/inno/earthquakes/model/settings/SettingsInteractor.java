@@ -11,8 +11,8 @@ import ru.inno.earthquakes.entities.Location;
  */
 public class SettingsInteractor {
 
-    private SettingsRepository repository;
-    private PublishSubject<Boolean> dataUpdated;
+    private final SettingsRepository repository;
+    private final PublishSubject<Boolean> dataUpdated;
 
     public SettingsInteractor(SettingsRepository repository) {
         this.repository = repository;

@@ -38,7 +38,7 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
     public static final int HORIZONTAL = 1;
 
     private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
-    private boolean mShowLastDivider;
+    private boolean showLastDivider = true;
 
     private Drawable divider;
     private int leftMargin;
@@ -61,7 +61,7 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param marginProvider
      * @param visibilityProvider
      */
-    SmartDividerItemDecoration(Context context, int orientation, MarginProvider marginProvider, VisibilityProvider visibilityProvider) {
+    private SmartDividerItemDecoration(Context context, int orientation, MarginProvider marginProvider, VisibilityProvider visibilityProvider) {
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         divider = a.getDrawable(0);
         a.recycle();
@@ -91,9 +91,6 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param drawable Drawable that should be used as a divider.
      */
     public void setDrawable(@NonNull Drawable drawable) {
-        if (drawable == null) {
-            throw new IllegalArgumentException("Drawable cannot be null.");
-        }
         divider = drawable;
     }
 
@@ -112,13 +109,14 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
      * @param show
      */
     public void setShowLastDivider(boolean show) {
-        this.mShowLastDivider = show;
+        this.showLastDivider = show;
     }
 
     @Override
     public void onDraw(Canvas canvas, RecyclerView parent, RecyclerView.State state) {
         int childCount = parent.getChildCount();
-        for (int i = 0; i < childCount - 1; i++) {
+        int lastPos = showLastDivider ? childCount - 1 : childCount - 2;
+        for (int i = 0; i < lastPos; i++) {
             View child = parent.getChildAt(i);
             int childPosition = parent.getChildAdapterPosition(child);
 
@@ -179,14 +177,14 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
         boolean getVisibility(int position, RecyclerView parent);
     }
 
-    static class DefaultMarginProvider implements MarginProvider {
+    private static class DefaultMarginProvider implements MarginProvider {
         @Override
         public int getMargin(int position, RecyclerView parent) {
             return 0;
         }
     }
 
-    static class DefaultVisibilityProvider implements VisibilityProvider {
+    private static class DefaultVisibilityProvider implements VisibilityProvider {
         @Override
         public boolean getVisibility(int position, RecyclerView parent) {
             return true;
@@ -233,8 +231,6 @@ public class SmartDividerItemDecoration extends RecyclerView.ItemDecoration {
             }
             return new SmartDividerItemDecoration(context, orientationMode, marginProvider, visibilityProvider);
         }
-
-
     }
 }
 

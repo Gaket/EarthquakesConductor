@@ -7,7 +7,7 @@ import com.bluelinelabs.conductor.Controller;
 import com.bluelinelabs.conductor.ControllerChangeHandler;
 import com.bluelinelabs.conductor.ControllerChangeType;
 
-import ru.inno.earthquakes.EartquakeApp;
+import ru.inno.earthquakes.EarthquakeApp;
 /**
  * Extension of  {@link Controller} that works with the LeakCanary library
  * to check if something has leaked.
@@ -26,7 +26,7 @@ import ru.inno.earthquakes.EartquakeApp;
         super.onDestroy();
 
         if (hasExited) {
-            EartquakeApp.getRefWatcher(getActivity()).watch(this);
+            EarthquakeApp.getRefWatcher(getActivity()).watch(this);
         }
     }
 
@@ -36,7 +36,7 @@ import ru.inno.earthquakes.EartquakeApp;
 
         hasExited = !changeType.isEnter;
         if (isDestroyed()) {
-            EartquakeApp.getRefWatcher(getActivity()).watch(this);
+            EarthquakeApp.getRefWatcher(getActivity()).watch(this);
         }
     }
 }

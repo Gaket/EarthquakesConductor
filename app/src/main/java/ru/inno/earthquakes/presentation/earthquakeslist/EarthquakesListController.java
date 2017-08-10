@@ -19,7 +19,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import ru.inno.earthquakes.EartquakeApp;
+import ru.inno.earthquakes.EarthquakeApp;
 import ru.inno.earthquakes.R;
 import ru.inno.earthquakes.entities.EarthquakeWithDist;
 import ru.inno.earthquakes.model.earthquakes.EarthquakesInteractor;
@@ -51,7 +51,7 @@ public class EarthquakesListController extends BaseController
 
     @ProvidePresenter
     EarthquakesListPresenter providePresenter() {
-        EartquakeApp.getComponentsManager().getEarthquakesComponent().inject(this);
+        EarthquakeApp.getComponentsManager().getEarthquakesComponent().inject(this);
         return new EarthquakesListPresenter(earthquakesInteractor, locationInteractor, schedulersProvider);
     }
 

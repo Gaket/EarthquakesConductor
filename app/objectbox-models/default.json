@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:271876208955194436",
-      "lastPropertyId": "3:1893130249495729472",
+      "lastPropertyId": "4:3610687616471213023",
       "name": "CoordinatesDb",
       "properties": [
         {
@@ -13,12 +13,12 @@
           "name": "id"
         },
         {
-          "id": "2:5208619898520384269",
-          "name": "longtitude"
-        },
-        {
           "id": "3:1893130249495729472",
           "name": "latitude"
+        },
+        {
+          "id": "4:3610687616471213023",
+          "name": "longitude"
         }
       ]
     },
@@ -81,6 +81,8 @@
   "modelVersion": 2,
   "retiredEntityUids": [],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    5208619898520384269
+  ],
   "version": 1
 }

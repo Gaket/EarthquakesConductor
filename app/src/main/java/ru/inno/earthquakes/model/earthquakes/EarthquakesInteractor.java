@@ -19,10 +19,10 @@ import ru.inno.earthquakes.presentation.common.SchedulersProvider;
  */
 public class EarthquakesInteractor {
 
-    private EarthquakesRepository earthquakesRepository;
-    private SettingsRepository settingsRepository;
-    private Comparator<EarthquakeWithDist> distanceComparator;
-    private SchedulersProvider schedulersProvider;
+    private final EarthquakesRepository earthquakesRepository;
+    private final SettingsRepository settingsRepository;
+    private final Comparator<EarthquakeWithDist> distanceComparator;
+    private final SchedulersProvider schedulersProvider;
 
     public EarthquakesInteractor(EarthquakesRepository earthquakesRepository, 
                                  SettingsRepository settingsRepository, 
@@ -49,8 +49,8 @@ public class EarthquakesInteractor {
                 .toList()
                 .map(earthquakeWithDists -> earthquakeWithDists.isEmpty() ?
                         new EntitiesWrapper<EarthquakeWithDist>(State.EMPTY, null) :
-                        new EntitiesWrapper<EarthquakeWithDist>(State.SUCCESS, earthquakeWithDists.get(0)))
-                .onErrorReturnItem(new EntitiesWrapper<EarthquakeWithDist>(State.ERROR_NETWORK, null))
+                        new EntitiesWrapper<>(State.SUCCESS, earthquakeWithDists.get(0)))
+                .onErrorReturnItem(new EntitiesWrapper<>(State.ERROR_NETWORK, null))
                 .subscribeOn(schedulersProvider.io());
     }
 

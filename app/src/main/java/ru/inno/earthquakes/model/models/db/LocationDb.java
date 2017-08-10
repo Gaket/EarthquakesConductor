@@ -1,11 +1,11 @@
 package ru.inno.earthquakes.model.models.db;
 
+import io.objectbox.BoxStore;
 import io.objectbox.annotation.Entity;
+import io.objectbox.annotation.Generated;
 import io.objectbox.annotation.Id;
 import io.objectbox.annotation.Relation;
-import io.objectbox.annotation.Generated;
 import io.objectbox.annotation.apihint.Internal;
-import io.objectbox.BoxStore;
 import io.objectbox.relation.ToOne;
 
 /**

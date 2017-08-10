@@ -15,9 +15,9 @@ import ru.inno.earthquakes.entities.Location;
  */
 public class LocationRepository {
 
-    private FusedLocationProviderClient fusedLocationClient;
-    private GoogleApiAvailability googleApiAvailability;
-    private Context context;
+    private final FusedLocationProviderClient fusedLocationClient;
+    private final GoogleApiAvailability googleApiAvailability;
+    private final Context context;
     private boolean isGoogleApiAvailable = true;
 
     public LocationRepository(FusedLocationProviderClient fusedLocationClient, GoogleApiAvailability googleApiAvailability, Context context) {
@@ -75,7 +75,6 @@ public class LocationRepository {
         }
         return isGoogleApiAvailable;
     }
-
 
     /**
      * @return status code from the location services

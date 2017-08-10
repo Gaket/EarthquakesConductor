@@ -31,7 +31,7 @@ public class Location {
      * @return distance in meters
      */
     static double distance(Coordinates from, Coordinates to) {
-        return distFrom(from.getLatitude(), from.getLongtitude(), to.getLatitude(), to.getLongtitude());
+        return distFrom(from.getLatitude(), from.getLongitude(), to.getLatitude(), to.getLongitude());
     }
 
     private static double distFrom(double lat1, double lng1, double lat2, double lng2) {
@@ -45,11 +45,12 @@ public class Location {
         return earthRadius * c;
     }
 
+    @Nullable
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(@Nullable String name) {
         this.name = name;
     }
 
@@ -63,20 +64,20 @@ public class Location {
 
     public static class Coordinates {
 
-        private double longtitude;
+        private double longitude;
         private double latitude;
 
-        public Coordinates(double latitude, double longtitude) {
+        public Coordinates(double latitude, double longitude) {
             this.latitude = latitude;
-            this.longtitude = longtitude;
+            this.longitude = longitude;
         }
 
-        public double getLongtitude() {
-            return longtitude;
+        public double getLongitude() {
+            return longitude;
         }
 
-        public void setLongtitude(double longtitude) {
-            this.longtitude = longtitude;
+        public void setLongitude(double longitude) {
+            this.longitude = longitude;
         }
 
         public double getLatitude() {
@@ -94,7 +95,7 @@ public class Location {
 
             Coordinates that = (Coordinates) o;
 
-            return Double.compare(that.longtitude, longtitude) == 0
+            return Double.compare(that.longitude, longitude) == 0
                     && Double.compare(that.latitude, latitude) == 0;
         }
 
@@ -102,7 +103,7 @@ public class Location {
         public int hashCode() {
             int result;
             long temp;
-            temp = Double.doubleToLongBits(longtitude);
+            temp = Double.doubleToLongBits(longitude);
             result = (int) (temp ^ (temp >>> 32));
             temp = Double.doubleToLongBits(latitude);
             result = 31 * result + (int) (temp ^ (temp >>> 32));

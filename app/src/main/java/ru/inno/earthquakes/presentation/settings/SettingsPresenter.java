@@ -13,7 +13,7 @@ import ru.inno.earthquakes.presentation.common.Utils;
 @InjectViewState
 public class SettingsPresenter extends BasePresenter<SettingsView> {
 
-    private SettingsInteractor interactor;
+    private final SettingsInteractor interactor;
 
     SettingsPresenter(SettingsInteractor settingsInteractor) {
         this.interactor = settingsInteractor;

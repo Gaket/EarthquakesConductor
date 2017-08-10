@@ -12,7 +12,7 @@ import ru.inno.earthquakes.presentation.common.ActionBarProvider;
 import timber.log.Timber;
 
 /**
- *  Extensin of {@link Controller} that helps to work with {@link ActionBar}
+ *  Extension of {@link Controller} that helps to work with {@link ActionBar}
  *
  * @author Artur Badretdinov (Gaket)
  *         09.08.17

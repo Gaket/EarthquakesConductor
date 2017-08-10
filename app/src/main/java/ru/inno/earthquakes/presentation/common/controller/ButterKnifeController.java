@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Extensin of {@link Controller} that binds and unbinds view using {@link ButterKnife}
+ * Extension of {@link Controller} that binds and unbinds view using {@link ButterKnife}
  */
 public abstract class ButterKnifeController extends Controller {
 

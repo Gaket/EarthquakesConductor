@@ -12,15 +12,14 @@ import java.text.DecimalFormatSymbols;
  */
 public final class Utils {
 
-    private Utils(){};
+    private Utils(){}
 
     /**
      * Converts values from pixels to density independent pixels
      */
     public static int dpToPx(Context context, int dp) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
-        return px;
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
     /**

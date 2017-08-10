@@ -21,9 +21,9 @@ import timber.log.Timber;
 @InjectViewState
 public class EarthquakesListPresenter extends BasePresenter<EarthquakesListView> {
 
-    private EarthquakesInteractor earthquakesInteractor;
-    private LocationInteractor locationInteractor;
-    private SchedulersProvider schedulersProvider;
+    private final EarthquakesInteractor earthquakesInteractor;
+    private final LocationInteractor locationInteractor;
+    private final SchedulersProvider schedulersProvider;
     private boolean isAlreadyUpdating;
 
     EarthquakesListPresenter(EarthquakesInteractor earthquakesInteractor, LocationInteractor locationInteractor, SchedulersProvider schedulersProvider) {

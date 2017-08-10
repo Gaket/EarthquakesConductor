@@ -25,7 +25,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import ru.inno.earthquakes.EartquakeApp;
+import ru.inno.earthquakes.EarthquakeApp;
 import ru.inno.earthquakes.R;
 import ru.inno.earthquakes.model.settings.SettingsInteractor;
 import ru.inno.earthquakes.presentation.common.controller.BaseController;
@@ -55,7 +55,7 @@ public class SettingsController extends BaseController implements SettingsView {
 
     @ProvidePresenter
     SettingsPresenter providePresenter() {
-        EartquakeApp.getComponentsManager().getAppComponent().inject(this);
+        EarthquakeApp.getComponentsManager().getAppComponent().inject(this);
         return new SettingsPresenter(interactor);
     }
 

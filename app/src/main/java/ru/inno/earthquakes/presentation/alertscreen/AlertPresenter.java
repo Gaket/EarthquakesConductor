@@ -21,9 +21,9 @@ import timber.log.Timber;
 public class AlertPresenter extends BasePresenter<AlertView> {
 
     private final SettingsInteractor settingsInteractor;
-    private EarthquakesInteractor earthquakesInteractor;
-    private LocationInteractor locationInteractor;
-    private SchedulersProvider schedulersProvider;
+    private final EarthquakesInteractor earthquakesInteractor;
+    private final LocationInteractor locationInteractor;
+    private final SchedulersProvider schedulersProvider;
 
     AlertPresenter(EarthquakesInteractor earthquakesInteractor,
                    LocationInteractor locationInteractor,
@@ -75,11 +75,11 @@ public class AlertPresenter extends BasePresenter<AlertView> {
                 .observeOn(schedulersProvider.ui())
                 .doOnSubscribe(disp -> getViewState().showLoading(true))
                 .doAfterTerminate(() -> getViewState().showLoading(false))
-                .subscribe(this::handleEartquakesAnswer, Timber::e);
+                .subscribe(this::handleEarthquakesAnswer, Timber::e);
         unsubscribeOnDestroy(disposable);
     }
 
-    private void handleEartquakesAnswer(EntitiesWrapper<EarthquakeWithDist> earthquakeWithDists) {
+    private void handleEarthquakesAnswer(EntitiesWrapper<EarthquakeWithDist> earthquakeWithDists) {
         handleNetworkStateMessage(earthquakeWithDists);
         handleEarthquakeData(earthquakeWithDists);
     }

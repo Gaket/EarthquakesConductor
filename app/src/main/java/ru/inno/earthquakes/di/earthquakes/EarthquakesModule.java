@@ -7,12 +7,12 @@ import org.mapstruct.factory.Mappers;
 import dagger.Module;
 import dagger.Provides;
 import io.objectbox.BoxStore;
-import ru.inno.earthquakes.model.earthquakes.EarthquakesCache;
-import ru.inno.earthquakes.model.earthquakes.EarthquakesRepository;
-import ru.inno.earthquakes.model.models.db.MyObjectBox;
 import ru.inno.earthquakes.model.earthquakes.EarthquakesApiService;
+import ru.inno.earthquakes.model.earthquakes.EarthquakesCache;
 import ru.inno.earthquakes.model.earthquakes.EarthquakesInteractor;
+import ru.inno.earthquakes.model.earthquakes.EarthquakesRepository;
 import ru.inno.earthquakes.model.mappers.EarthquakesMapper;
+import ru.inno.earthquakes.model.models.db.MyObjectBox;
 import ru.inno.earthquakes.model.settings.SettingsRepository;
 import ru.inno.earthquakes.presentation.common.SchedulersProvider;
 

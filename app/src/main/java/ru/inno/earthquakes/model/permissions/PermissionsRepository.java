@@ -12,7 +12,7 @@ import io.reactivex.Observable;
  */
 public class PermissionsRepository {
 
-    private RxPermissions rxPermissions;
+    private final RxPermissions rxPermissions;
 
     public PermissionsRepository(RxPermissions rxPermissions) {
         this.rxPermissions = rxPermissions;

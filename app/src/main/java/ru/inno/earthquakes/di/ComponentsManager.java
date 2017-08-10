@@ -10,7 +10,7 @@ import ru.inno.earthquakes.di.earthquakes.EarthquakesModule;
 
 public class ComponentsManager {
 
-    private Context context;
+    private final Context context;
 
     private AppComponent appComponent;
     private EarthquakesComponent earthquakesComponent;

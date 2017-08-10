@@ -13,7 +13,7 @@ public class SettingsRepository {
     private static final String KEY_MAX_DIST = "ru.inno.earthquakes.model.settings.max_dist";
     private static final String KEY_MIN_MAG = "ru.inno.earthquakes.model.settings.min_mag";
 
-    private SharedPreferences sharedPreferences;
+    private final SharedPreferences sharedPreferences;
 
     // Return Moscow coordinates by default. Later we can create a feature where user enters it
     private final String DEFAULT_CITY = "Moscow";

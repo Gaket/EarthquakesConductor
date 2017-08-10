@@ -40,7 +40,7 @@ public abstract class EarthquakesMapper {
     }
 
     public Location.Coordinates coords(CoordinatesDb coordinatesDb) {
-        return new Location.Coordinates(coordinatesDb.getLatitude(), coordinatesDb.getLongtitude());
+        return new Location.Coordinates(coordinatesDb.getLatitude(), coordinatesDb.getLongitude());
     }
 
     public Location loc(LocationDb loc) {

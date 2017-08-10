@@ -14,9 +14,9 @@ import timber.log.Timber;
  */
 public class EarthquakesRepository {
 
-    private EarthquakesApiService apiService;
-    private EarthquakesMapper earthquakesMapper;
-    private EarthquakesCache earthquakesCache;
+    private final EarthquakesApiService apiService;
+    private final EarthquakesMapper earthquakesMapper;
+    private final EarthquakesCache earthquakesCache;
 
     public EarthquakesRepository(EarthquakesApiService apiService, EarthquakesMapper earthquakesMapper, EarthquakesCache earthquakesCache) {
         this.apiService = apiService;

@@ -28,7 +28,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import ru.inno.earthquakes.EartquakeApp;
+import ru.inno.earthquakes.EarthquakeApp;
 import ru.inno.earthquakes.R;
 import ru.inno.earthquakes.entities.EarthquakeWithDist;
 import ru.inno.earthquakes.model.earthquakes.EarthquakesInteractor;
@@ -62,7 +62,6 @@ public class AlertController extends BaseController implements AlertView {
     @Inject
     GoogleApiAvailability googleApiAvailability;
 
-
     @BindView(R.id.alert_swipe_refresh)
     SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.alert_message)
@@ -79,7 +78,7 @@ public class AlertController extends BaseController implements AlertView {
 
     @ProvidePresenter
     AlertPresenter providePresenter() {
-        EartquakeApp.getComponentsManager().getEarthquakesComponent().inject(this);
+        EarthquakeApp.getComponentsManager().getEarthquakesComponent().inject(this);
         return new AlertPresenter(earthquakesInteractor, locationInteractor, settingsInteractor, schedulersProvider);
     }
 
